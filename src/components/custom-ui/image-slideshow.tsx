@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -23,10 +24,11 @@ export default function ImageSlideshow({ images }: Props) {
   }, []);
 
   return (
-    <div className="rounded shadow-lg w-full h-[400px] relative">
+    <div className="rounded-lg shadow-lg w-full h-[400px] relative">
       {images.map((image, index) => (
         <img
-          className={`absolute top-0 left-0 rounded w-full h-full object-cover object-center transition ${
+          key={index}
+          className={`absolute top-0 left-0 rounded-lg w-full h-full object-cover object-center transition ${
             index === currentImageIndex ? "opacity-100" : "opacity-0"
           }`}
           src={image.src}

@@ -19,6 +19,25 @@
   left: 0;
   bottom: -7px;
   height: 40%;
+  animation: expand-width 5s infinite;
+}
+
+@keyframes expand-width {
+  0% {
+    width: 0%;
+    opacity: 1;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
+  }
 }
 
 @layer base {
