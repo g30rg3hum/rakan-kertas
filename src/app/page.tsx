@@ -1,9 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import CheckedList from "@/components/custom-ui/checked-list";
 import { Image } from "@/components/custom-ui/image-slideshow";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
 import {
   faScroll,
   faPallet,
@@ -31,6 +28,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import * as motion from "framer-motion/client";
+import LinkButton from "@/components/custom-ui/link-button";
 
 const heroImages: Image[] = [
   { src: "/images/hero-image1.jpg", alt: "Hero image 1" },
@@ -121,31 +120,29 @@ export default function Home() {
             />
           </div>
 
-          <Link
-            href=""
-            className={cn(buttonVariants({ variant: "default" }), "px-14 py-1")}
-          >
-            Get a quote
-          </Link>
+          <LinkButton href="" variant="default" text="Get a quote" />
         </div>
-        <div className="relative">
-          <span className="absolute top-0 right-0 z-10 translate-x-[20px] rotate-[10deg] bg-yellow-200 px-3 py-1 shadow-lg rounded font-medium text-sm">
-            Try swiping through this!
-          </span>
-          <Carousel className="sm:max-w-xl">
-            <CarouselContent>
-              {heroImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full rounded-lg"
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        </div>
+
+        <motion.div whileHover={{ scale: 1.02 }}>
+          <div className="relative">
+            <span className="absolute top-0 right-0 z-10 translate-x-[20px] rotate-[10deg] bg-yellow-200 px-3 py-1 shadow-lg rounded font-medium text-sm">
+              Try swiping through this!
+            </span>
+            <Carousel className="sm:max-w-xl">
+              <CarouselContent>
+                {heroImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full rounded-lg"
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+        </motion.div>
       </div>
       <div className="py-16 px-6 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-14">
         <div className="w-full sm:max-w-xl text-center lg:text-left">
@@ -192,11 +189,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img
-          src="/images/what-image.jpg"
-          alt="What image"
-          className="w-full md:max-w-lg rounded-lg shadow-lg"
-        />
+        <motion.div whileHover={{ scale: 1.02 }}>
+          <img
+            src="/images/what-image.jpg"
+            alt="What image"
+            className="w-full md:max-w-lg rounded-lg shadow-lg"
+          />
+        </motion.div>
       </div>
       <div className="py-16 px-6 bg-primary text-white relative text-center flex flex-col items-center">
         <div className="absolute background-texture inset-0 z-10 opacity-30"></div>
@@ -236,8 +235,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="py-16 px-6 bg-[#19192E] relative text-white md:px-20">
-        <div className="absolute background-texture inset-0 opacity-10"></div>
+      <div className="py-16 px-6 bg-[#19192E] relative text-white md:px-20 background-texture-2">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {companyUpsideFacts.map((fact) => (
             <CompanyUpsideFact key={fact.title} {...fact} />
@@ -268,12 +266,7 @@ export default function Home() {
         <h2 className="font-bold text-4xl lg:text-5xl mb-5 text-center">
           Sounds like something you&apos;re interested in?
         </h2>
-        <Link
-          href=""
-          className={cn(buttonVariants({ variant: "default" }), "px-14 py-1")}
-        >
-          Get a quote
-        </Link>
+        <LinkButton href="" variant="default" text="Get a quote" />
       </div>
     </>
   );
@@ -298,33 +291,35 @@ function ServiceCard({
   buttonLink,
 }: ServiceCardProps) {
   return (
-    <div className="flex flex-col gap-6 items-center">
-      <div className="w-full max-w-sm border border-[6px] border-white rounded-lg px-5 py-12 shadow-md relative ">
-        <FontAwesomeIcon
-          icon={icon}
-          className="text-5xl text-white absolute top-[-20px] translate-x-[-50%] bg-primary px-4"
-        />
-        <h3 className="text-3xl font-bold">
-          {titlePtOne}
+    <div className="flex flex-col gap-6 items-center z-20">
+      <motion.div whileHover={{ scale: 1.02 }}>
+        <div className="w-full max-w-sm border border-[6px] border-white rounded-lg px-5 py-12 shadow-md relative select-none">
+          <FontAwesomeIcon
+            icon={icon}
+            className="text-5xl text-white absolute top-[-20px] translate-x-[-50%] bg-primary px-4"
+          />
+          <h3 className="text-3xl font-bold">
+            {titlePtOne}
+            <br />
+            {titlePtTwo}
+          </h3>
           <br />
-          {titlePtTwo}
-        </h3>
-        <br />
-        <div className="text-md h-[250px]">
-          <p>{paragraphOne}</p>
-          <br />
-          <p>{paragraphTwo}</p>
+          <div className="text-md h-[250px]">
+            <p>{paragraphOne}</p>
+            <br />
+            <p>{paragraphTwo}</p>
+          </div>
         </div>
+      </motion.div>
+
+      <div className="z-20">
+        <LinkButton
+          href={buttonLink}
+          variant="secondary"
+          text={buttonText}
+          xPadding={12}
+        />
       </div>
-      <Link
-        href={buttonLink}
-        className={cn(
-          buttonVariants({ variant: "secondary" }),
-          "px-12 py-1 z-20"
-        )}
-      >
-        {buttonText}
-      </Link>
     </div>
   );
 }
@@ -340,10 +335,12 @@ function CompanyUpsideFact({
   description,
 }: CompanyUpsideFactProps) {
   return (
-    <div className="w-full">
-      <FontAwesomeIcon icon={icon} className="text-2xl" />
-      <h4 className="font-bold text-xl">{title}</h4>
-      <p>{description}</p>
-    </div>
+    <motion.div whileHover={{ scale: 1.02 }}>
+      <div className="w-full z-20 select-none">
+        <FontAwesomeIcon icon={icon} className="text-accent text-lg" />
+        <h4 className="font-bold text-xl">{title}</h4>
+        <p>{description}</p>
+      </div>
+    </motion.div>
   );
 }

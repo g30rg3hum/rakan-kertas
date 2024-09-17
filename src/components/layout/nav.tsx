@@ -11,6 +11,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import HoverScale from "../custom-ui/hover-scale";
+import * as motion from "framer-motion/client";
 
 const navItems = [
   {
@@ -49,12 +50,17 @@ export default function Nav() {
               </NavigationMenuItem>
             ))}
             <NavigationMenuItem>
-              <NavigationMenuLink
-                href={navItems[navItems.length - 1].href}
-                className={buttonVariants({ variant: "default" })}
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {navItems[navItems.length - 1].name}
-              </NavigationMenuLink>
+                <NavigationMenuLink
+                  href={navItems[navItems.length - 1].href}
+                  className={buttonVariants({ variant: "default" })}
+                >
+                  {navItems[navItems.length - 1].name}
+                </NavigationMenuLink>
+              </motion.button>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

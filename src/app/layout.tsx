@@ -4,6 +4,10 @@ import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+
 export const metadata: Metadata = {
   title: "Rakan Kertas",
   description: "Malaysia's No. 1 Recycling Company",
