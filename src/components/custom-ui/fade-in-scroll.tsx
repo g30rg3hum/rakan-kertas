@@ -10,6 +10,7 @@ export default function FadeInScroll({ children }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
+      transition={{ duration: 1 }}
     >
       {children}
     </motion.div>
