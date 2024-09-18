@@ -317,7 +317,7 @@ function ServiceCard({
           href={buttonLink}
           variant="secondary"
           text={buttonText}
-          xPadding={12}
+          xPadding={3}
         />
       </div>
     </div>
