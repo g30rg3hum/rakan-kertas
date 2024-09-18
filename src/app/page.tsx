@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/accordion";
 import * as motion from "framer-motion/client";
 import LinkButton from "@/components/custom-ui/link-button";
+import FadeInScroll from "@/components/custom-ui/fade-in-scroll";
 
 const heroImages: Image[] = [
   { src: "/images/hero-image1.jpg", alt: "Hero image 1" },
@@ -103,170 +104,192 @@ export default function Home() {
   return (
     <>
       <div className="px-6 py-10 flex flex-col gap-12 justify-center items-center text-center">
-        <div>
-          <h1 className="font-bold text-5xl lg:text-6xl mb-7 leading-tight text-center">
-            Your <span className="curved-underline">recycling</span> ally!{" "}
-            <span className="inline-block animate-spin duration-[3000ms]">
-              ♻️
-            </span>
-          </h1>
-          <div className="mb-5 text-md sm:text-lg flex justify-center text-left">
-            <CheckedList
-              points={[
-                "Sustainable waste management",
-                "Innovative recycling solutions",
-                "Community and corporate partnerships",
-              ]}
-            />
-          </div>
+        <FadeInScroll>
+          <div>
+            <h1 className="font-bold text-5xl lg:text-6xl mb-7 leading-tight text-center">
+              Your <span className="curved-underline">recycling</span> ally!{" "}
+              <span className="inline-block animate-spin duration-[3000ms]">
+                ♻️
+              </span>
+            </h1>
+            <div className="mb-5 text-md sm:text-lg flex justify-center text-left">
+              <CheckedList
+                points={[
+                  "Sustainable waste management",
+                  "Innovative recycling solutions",
+                  "Community and corporate partnerships",
+                ]}
+              />
+            </div>
 
-          <LinkButton href="" variant="default" text="Get a quote" />
-        </div>
-
-        <motion.div whileHover={{ scale: 1.02 }}>
-          <div className="relative">
-            <span className="absolute top-0 right-0 z-10 translate-x-[20px] rotate-[10deg] bg-yellow-200 px-3 py-1 shadow-lg rounded font-medium text-sm">
-              Try swiping through this!
-            </span>
-            <Carousel className="sm:max-w-xl">
-              <CarouselContent>
-                {heroImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full rounded-lg"
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+            <LinkButton href="" variant="default" text="Get a quote" />
           </div>
-        </motion.div>
+        </FadeInScroll>
+
+        <FadeInScroll>
+          <motion.div whileHover={{ scale: 1.02 }}>
+            <div className="relative">
+              <span className="absolute top-0 right-0 z-10 translate-x-[20px] rotate-[10deg] bg-yellow-200 px-3 py-1 shadow-lg rounded font-medium text-sm">
+                Try swiping through this!
+              </span>
+              <Carousel className="sm:max-w-xl">
+                <CarouselContent>
+                  {heroImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full rounded-lg"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </div>
+          </motion.div>
+        </FadeInScroll>
       </div>
       <div className="py-16 px-6 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-14">
-        <div className="w-full sm:max-w-xl text-center lg:text-left">
-          <span className="text-md sm:text-lg italic">What do we do?</span>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-5">
-            Recycling made <span className="text-primary">easier.</span> ✨
-          </h2>
-          <p>
-            At Rakan Kertas Sdn Bhd, we specialise in efficient and innovative
-            waste management tailored to the needs of corporations and
-            organisations, with a strong emphasis on eco-friendly practices.
-          </p>
-          <br />
-          <p>
-            Our comprehensive approach includes a variety of waste collection
-            solutions, accomodating both recyclable and non-recyclable
-            materials.
-          </p>
-          <br />
-          <div className="text-lg">
-            <p className="font-semibold mb-2">
-              Some of the main materials that we collect:
+        <FadeInScroll>
+          <div className="w-full sm:max-w-xl text-center lg:text-left">
+            <span className="text-md sm:text-lg italic">What do we do?</span>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-5">
+              Recycling made <span className="text-primary">easier.</span> ✨
+            </h2>
+            <p>
+              At Rakan Kertas Sdn Bhd, we specialise in efficient and innovative
+              waste management tailored to the needs of corporations and
+              organisations, with a strong emphasis on eco-friendly practices.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center lg:justify-start">
-              <div>
-                <FontAwesomeIcon icon={faScroll} className="text-primary" />
-                <span className="ml-2">Paper</span>
-              </div>
-              <div>
-                <FontAwesomeIcon icon={faPallet} className="text-primary" />
-                <span className="ml-2">Wood</span>
-              </div>
-              <div>
-                <FontAwesomeIcon
-                  icon={faSheetPlastic}
-                  className="text-primary"
-                />
-                <span className="ml-2">Plastic</span>
-              </div>
-              <div>
-                <FontAwesomeIcon icon={faWrench} className="text-primary" />
-                <span className="ml-2">Metal</span>
+            <br />
+            <p>
+              Our comprehensive approach includes a variety of waste collection
+              solutions, accomodating both recyclable and non-recyclable
+              materials.
+            </p>
+            <br />
+            <div className="text-lg">
+              <p className="font-semibold mb-2">
+                Some of the main materials that we collect:
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center lg:justify-start">
+                <div>
+                  <FontAwesomeIcon icon={faScroll} className="text-primary" />
+                  <span className="ml-2">Paper</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faPallet} className="text-primary" />
+                  <span className="ml-2">Wood</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon
+                    icon={faSheetPlastic}
+                    className="text-primary"
+                  />
+                  <span className="ml-2">Plastic</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faWrench} className="text-primary" />
+                  <span className="ml-2">Metal</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <motion.div whileHover={{ scale: 1.02 }}>
-          <img
-            src="/images/what-image.jpg"
-            alt="What image"
-            className="w-full md:max-w-lg rounded-lg shadow-lg"
-          />
-        </motion.div>
+        </FadeInScroll>
+        <FadeInScroll>
+          <motion.div whileHover={{ scale: 1.02 }}>
+            <img
+              src="/images/what-image.jpg"
+              alt="What image"
+              className="w-full md:max-w-lg rounded-lg shadow-lg"
+            />
+          </motion.div>
+        </FadeInScroll>
       </div>
       <div className="py-16 px-6 bg-primary text-white relative text-center flex flex-col items-center">
         <div className="absolute background-texture inset-0 z-10 opacity-30"></div>
-        <span className="text-md sm:text-lg italic">
-          What can we offer you?
-        </span>
-        <h2 className="text-4xl lg:text-5xl font-bold mb-12">
-          We have two main services.
-        </h2>
-        <div className="flex flex-col md:flex-row gap-20 md:gap-16">
-          <ServiceCard
-            icon={faTruck}
-            titlePtOne="Disposable Waste"
-            titlePtTwo="Collection"
-            paragraphOne="We will send an industrial waste bin to your area. This can be
+        <FadeInScroll>
+          <span className="text-md sm:text-lg italic">
+            What can we offer you?
+          </span>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-12">
+            We have two main services.
+          </h2>
+          <div className="flex flex-col md:flex-row gap-20 md:gap-16">
+            <ServiceCard
+              icon={faTruck}
+              titlePtOne="Disposable Waste"
+              titlePtTwo="Collection"
+              paragraphOne="We will send an industrial waste bin to your area. This can be
             anywhere - a construction site or even just the company office. Any
             place where mass rubbish needs to be thrown."
-            paragraphTwo="Then, once the waste bin is full, we will come and collect it.
+              paragraphTwo="Then, once the waste bin is full, we will come and collect it.
             It's really just that simple! No work needed on your end, just
             gotta throw your rubbish in the bin."
-            buttonText="More about waste collection"
-            buttonLink=""
-          />
-          <ServiceCard
-            icon={faRecycle}
-            titlePtOne="Recycling Material"
-            titlePtTwo="Collection"
-            paragraphOne="This service is for those who have recyclable materials on
+              buttonText="More about waste collection"
+              buttonLink=""
+            />
+            <ServiceCard
+              icon={faRecycle}
+              titlePtOne="Recycling Material"
+              titlePtTwo="Collection"
+              paragraphOne="This service is for those who have recyclable materials on
             hand, have no use for them and would like to sell them for
             some extra cash. Some easy money, if you will."
-            paragraphTwo="We purchase and collect paper, carton boxes, metals, wood
+              paragraphTwo="We purchase and collect paper, carton boxes, metals, wood
             pallets, and so much more! Just give us a call, let us know
             what you'd like to recycle, and we'll give you a
             quote on what we can offer in return."
-            buttonText="More about recycling"
-            buttonLink=""
-          />
-        </div>
+              buttonText="More about recycling"
+              buttonLink=""
+            />
+          </div>
+        </FadeInScroll>
       </div>
       <div className="py-16 px-6 bg-[#19192E] relative text-white md:px-20 background-texture-2">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-          {companyUpsideFacts.map((fact) => (
-            <CompanyUpsideFact key={fact.title} {...fact} />
-          ))}
-        </div>
+        <FadeInScroll>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+            {companyUpsideFacts.map((fact) => (
+              <CompanyUpsideFact key={fact.title} {...fact} />
+            ))}
+          </div>
+        </FadeInScroll>
       </div>
       <div className="py-16 px-6 flex flex-col items-center">
-        <span className="text-md sm:text-lg italic">
-          You may have some questions...
-        </span>
-        <h2 className="font-bold text-4xl lg:text-5xl mb-5 text-center">
-          Frequently Asked Questions
-        </h2>
+        <FadeInScroll>
+          <span className="text-md sm:text-lg italic">
+            You may have some questions...
+          </span>
+        </FadeInScroll>
+        <FadeInScroll>
+          <h2 className="font-bold text-4xl lg:text-5xl mb-5 text-center">
+            Frequently Asked Questions
+          </h2>
+        </FadeInScroll>
+
         <Accordion type="single" collapsible className="w-full max-w-xl">
           {questionAndAnswers.map((qa, index) => (
-            <AccordionItem value={`item-${index + 1}`} key={index}>
-              <AccordionTrigger className="text-lg">
-                {qa.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-base">
-                {qa.answer}
-              </AccordionContent>
-            </AccordionItem>
+            <FadeInScroll>
+              <AccordionItem value={`item-${index + 1}`} key={index}>
+                <AccordionTrigger className="text-lg">
+                  {qa.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-base">
+                  {qa.answer}
+                </AccordionContent>
+              </AccordionItem>
+            </FadeInScroll>
           ))}
         </Accordion>
       </div>
-      <div className="py-16 px-6 flex flex-col items-center bg-gray-100 background-texture">
-        <h2 className="font-bold text-4xl lg:text-5xl mb-5 text-center">
-          Sounds like something you&apos;re interested in?
-        </h2>
-        <LinkButton href="" variant="default" text="Get a quote" />
+      <div className="py-16 px-6 text-center bg-gray-100 background-texture">
+        <FadeInScroll>
+          <h2 className="font-bold text-4xl lg:text-5xl mb-5 text-center">
+            Sounds like something you&apos;re interested in?
+          </h2>
+
+          <LinkButton href="" variant="default" text="Get a quote" />
+        </FadeInScroll>
       </div>
     </>
   );
