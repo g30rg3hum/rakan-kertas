@@ -230,8 +230,7 @@ export default function Home() {
           </div>
         </AnimateScrollWrapper>
       </div>
-      <div className="py-16 px-6 bg-primary text-white relative text-center flex flex-col items-center">
-        <div className="absolute background-texture inset-0 z-10 opacity-30"></div>
+      <div className="py-16 px-6 bg-primary text-white relative text-center flex flex-col items-center background-texture-2">
         <FadeInScroll>
           <span className="text-md sm:text-lg italic">
             What can we offer you?
@@ -364,7 +363,7 @@ function ServiceCard({
         <div className="w-full max-w-sm border border-[6px] border-white rounded-lg px-5 py-12 shadow-md relative select-none">
           <FontAwesomeIcon
             icon={icon}
-            className="text-5xl text-white absolute top-[-20px] translate-x-[-50%] bg-primary px-4"
+            className="text-5xl text-white absolute top-[-20px] translate-x-[-50%] bg-primary px-4 background-texture-2"
           />
           <h3 className="text-3xl font-bold">
             {titlePtOne}
