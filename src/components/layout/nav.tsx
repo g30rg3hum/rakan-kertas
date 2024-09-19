@@ -12,25 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import HoverScale from "../custom-ui/hover-scale";
 import * as motion from "framer-motion/client";
-
-const navItems = [
-  {
-    name: "Home",
-    href: "",
-  },
-  {
-    name: "About Us",
-    href: "",
-  },
-  {
-    name: "Materials",
-    href: "",
-  },
-  {
-    name: "Get a quote",
-    href: "",
-  },
-];
+import navItems from "./nav-items";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
