@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import CheckedList from "@/components/custom-ui/checked-list";
-import { Image } from "@/components/custom-ui/image-slideshow";
+import ImageSlideshow, { Image } from "@/components/custom-ui/image-slideshow";
 import {
   faScroll,
   faPallet,
@@ -17,11 +17,6 @@ import {
   faMoneyBillWave,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import {
   Accordion,
   AccordionContent,
@@ -131,28 +126,13 @@ export default function Home() {
           </div>
         </FadeInScroll>
 
-        <FadeInScroll>
-          <FramerHoverWrapper>
-            <div className="relative">
-              <span className="absolute top-0 right-0 z-10 translate-x-[20px] rotate-[10deg] bg-yellow-200 px-3 py-1 shadow-lg rounded font-medium text-sm">
-                Try swiping through this!
-              </span>
-              <Carousel className="sm:max-w-xl">
-                <CarouselContent>
-                  {heroImages.map((image, index) => (
-                    <CarouselItem key={index}>
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full rounded-lg"
-                      />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
-            </div>
-          </FramerHoverWrapper>
-        </FadeInScroll>
+        <div className="w-full max-w-3xl">
+          <FadeInScroll>
+            <FramerHoverWrapper>
+              <ImageSlideshow images={heroImages} />
+            </FramerHoverWrapper>
+          </FadeInScroll>
+        </div>
       </div>
       <div className="py-16 px-6">
         <AnimateScrollWrapper>
@@ -283,6 +263,7 @@ export default function Home() {
           </div>
         </AnimateScrollWrapper>
       </div>
+      <div className="h-[650px] bg-[url('/images/landingpage.jpg')] bg-cover bg-center relative after:content-[''] after:absolute after:bottom-0 after:w-full after:h-[300px] after:bg-gradient-to-b after:from-transparent after:to-[#2a2a36] after:z-2 after:background-texture-2"></div>
       <div className="py-16 px-6 bg-[#19192E] relative text-white md:px-20 background-texture-2">
         <AnimateScrollWrapper>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
