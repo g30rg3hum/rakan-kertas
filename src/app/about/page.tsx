@@ -1,4 +1,21 @@
+/* eslint-disable @next/next/no-img-element */
+import { Image } from "@/components/custom-ui/image-slideshow";
 import { FadeInScroll } from "@/components/helpers/framer-scroll-helpers";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+const carouselImages: Image[] = [
+  { src: "/images/carousel-1.jpg", alt: "carousel 1" },
+  { src: "/images/carousel-2.jpg", alt: "carousel 2" },
+  { src: "/images/carousel-3.jpg", alt: "carousel 3" },
+  { src: "/images/carousel-4.jpg", alt: "carousel 5" },
+  { src: "/images/carousel-5.jpg", alt: "carousel 6" },
+];
 
 export default function AboutUs() {
   return (
@@ -7,7 +24,7 @@ export default function AboutUs() {
         className="flex min-h-[35rem] bg-center bg-cover relative text-white pt-40 lg:pt-44 px-6 md:px-20 lg:px-16"
         style={{ backgroundImage: "url('/images/metals.jpg')" }}
       >
-        <div className="bg-black inset-0 absolute w-full opacity-70 z-0"></div>
+        <div className="bg-black inset-0 absolute w-full opacity-[0.675] z-0"></div>
         <div className="z-10 max-w-xl h-max mb-24">
           <FadeInScroll>
             <h1 className="font-bold text-5xl mb-5">
@@ -54,6 +71,26 @@ export default function AboutUs() {
             </div>
           </FadeInScroll>
         </div>
+      </div>
+      <div className="px-16 py-16">
+        <Carousel className="mx-auto" opts={{ align: "center", loop: true }}>
+          <CarouselContent>
+            {carouselImages.map((image) => (
+              <CarouselItem
+                key={image.alt}
+                className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="rounded-md shadow-md"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </>
   );
