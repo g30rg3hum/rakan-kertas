@@ -107,10 +107,7 @@ export default function Home() {
         <div className="bg-gray-950 text-white background-texture-2 pt-48 px-6 lg:px-[5.5rem] lg:w-1/2 pb-36 text-center lg:text-left">
           <FadeInScroll>
             <h1 className="font-bold text-5xl lg:text-[3.62rem] mb-7 leading-tight">
-              Your <span className="curved-underline">recycling</span> ally!{" "}
-              <span className="inline-block animate-spin duration-[3000ms]">
-                ♻️
-              </span>
+              Your <span className="curved-underline">recycling</span> ally!
             </h1>
             <div className="mb-5 text-md sm:text-lg text-left">
               <div className="mx-auto lg:mx-0 w-max">

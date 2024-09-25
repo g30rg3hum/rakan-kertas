@@ -1,7 +1,7 @@
 const navItems = [
   {
     name: "Home",
-    href: "",
+    href: "/",
   },
   {
     name: "Services",
@@ -13,7 +13,7 @@ const navItems = [
   },
   {
     name: "About Us",
-    href: "",
+    href: "/about",
   },
   {
     name: "Get a quote",
