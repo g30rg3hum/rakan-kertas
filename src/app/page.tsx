@@ -132,7 +132,7 @@ export default function Home() {
           <ImageSlideshow images={heroImages} />
         </div>
       </div>
-      <div className="py-16 px-6">
+      <div className="py-16 px-16">
         <AnimateScrollWrapper>
           <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-14">
             <motion.div variants={baseVariants({ y: 100 }, { y: 0 })}>
