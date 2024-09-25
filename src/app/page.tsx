@@ -103,35 +103,33 @@ const questionAndAnswers: QuestionAndAnswer[] = [
 export default function Home() {
   return (
     <>
-      <div className="px-6 py-10 flex flex-col gap-12 justify-center items-center text-center">
-        <FadeInScroll>
-          <div>
-            <h1 className="font-bold text-5xl lg:text-6xl mb-7 leading-tight text-center">
+      <div className="flex flex-col lg:flex-row">
+        <div className="bg-gray-950 text-white background-texture-2 pt-48 px-16 lg:w-1/2 pb-36 text-center lg:text-left">
+          <FadeInScroll>
+            <h1 className="font-bold text-6xl mb-7 leading-tight">
               Your <span className="curved-underline">recycling</span> ally!{" "}
               <span className="inline-block animate-spin duration-[3000ms]">
                 ♻️
               </span>
             </h1>
-            <div className="mb-5 text-md sm:text-lg flex justify-center text-left">
-              <CheckedList
-                points={[
-                  "Sustainable waste management",
-                  "Innovative recycling solutions",
-                  "Community and corporate partnerships",
-                ]}
-              />
+            <div className="mb-5 text-md sm:text-lg text-left">
+              <div className="mx-auto lg:mx-0 w-max">
+                <CheckedList
+                  points={[
+                    "Sustainable waste management",
+                    "Innovative recycling solutions",
+                    "Community and corporate partnerships",
+                  ]}
+                />
+              </div>
             </div>
 
             <LinkButton href="" variant="default" text="Get a quote" />
-          </div>
-        </FadeInScroll>
-
-        <div className="w-full max-w-3xl">
-          <FadeInScroll>
-            <FramerHoverWrapper>
-              <ImageSlideshow images={heroImages} />
-            </FramerHoverWrapper>
           </FadeInScroll>
+        </div>
+
+        <div className="h-96 lg:w-1/2 lg:h-auto">
+          <ImageSlideshow images={heroImages} />
         </div>
       </div>
       <div className="py-16 px-6">
@@ -203,7 +201,7 @@ export default function Home() {
                 <img
                   src="/images/what-image.jpg"
                   alt="What image"
-                  className="w-full md:max-w-lg rounded-lg shadow-lg"
+                  className="w-full md:max-w-2xl rounded-lg shadow-lg"
                 />
               </FramerHoverWrapper>
             </motion.div>

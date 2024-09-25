@@ -24,11 +24,11 @@ export default function ImageSlideshow({ images }: Props) {
   }, []);
 
   return (
-    <div className="rounded-lg shadow-lg w-full h-[400px] relative">
+    <div className="w-full h-full relative">
       {images.map((image, index) => (
         <img
           key={index}
-          className={`absolute top-0 left-0 rounded-lg w-full h-full object-cover object-center transition ${
+          className={`absolute inset-0 w-full h-full object-cover object-center transition ${
             index === currentImageIndex ? "opacity-100" : "opacity-0"
           }`}
           src={image.src}

@@ -25,7 +25,7 @@ export default function Nav() {
             {navItems.slice(0, -1).map((item) => (
               <NavigationMenuItem key={item.name}>
                 <NavigationMenuLink href={item.href}>
-                  <span className="inline-block hover:scale-[1.05] transition text-md">
+                  <span className="inline-block hover:scale-[1.05] transition text-md font-semibold">
                     {item.name}
                   </span>
                 </NavigationMenuLink>
