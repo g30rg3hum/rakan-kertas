@@ -4,11 +4,15 @@ const navItems = [
     href: "",
   },
   {
-    name: "About Us",
+    name: "Services",
     href: "",
   },
   {
     name: "Materials",
+    href: "",
+  },
+  {
+    name: "About Us",
     href: "",
   },
   {
