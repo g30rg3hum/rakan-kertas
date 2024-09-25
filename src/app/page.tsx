@@ -104,7 +104,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col lg:flex-row">
-        <div className="bg-gray-950 text-white background-texture-2 pt-48 px-16 lg:w-1/2 pb-36 text-center lg:text-left">
+        <div className="bg-gray-950 text-white background-texture-2 pt-48 px-6 lg:px-16 lg:w-1/2 pb-36 text-center lg:text-left">
           <FadeInScroll>
             <h1 className="font-bold text-6xl mb-7 leading-tight">
               Your <span className="curved-underline">recycling</span> ally!{" "}
