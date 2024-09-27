@@ -8,6 +8,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  faGlasses,
+  faHandFist,
+  faHeart,
+  faLeaf,
+  IconDefinition,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const carouselImages: Image[] = [
   { src: "/images/carousel-1.jpg", alt: "carousel 1" },
@@ -17,19 +25,51 @@ const carouselImages: Image[] = [
   { src: "/images/carousel-5.jpg", alt: "carousel 6" },
 ];
 
+interface Value {
+  title: string;
+  icon: IconDefinition;
+  description: string;
+}
+const values: Value[] = [
+  {
+    title: "Transparency",
+    icon: faGlasses,
+    description:
+      "Openly sharing progress and practices with customers, ensuring integrity not only in environmental impact but also our business operations.",
+  },
+  {
+    title: "Customer-centric",
+    icon: faHeart,
+    description:
+      "Putting customers first, understanding their needs and providing solutions that are tailored to their unique requirements. We are committed to delivering the best service possible.",
+  },
+  {
+    title: "SDG-aligned",
+    icon: faLeaf,
+    description:
+      "Committed to achieving the Sustainable Development Goals set by the United Nations, we are dedicated to making a positive impact on the environment.",
+  },
+  {
+    title: "Empowerment",
+    icon: faHandFist,
+    description:
+      "Empowering our employees to make decisions and take actions that will benefit the environment and our customers.",
+  },
+];
+
 export default function AboutUs() {
   return (
     <>
       <div
-        className="flex min-h-[35rem] bg-center bg-cover relative text-white pt-40 lg:pt-44 px-6 md:px-20 lg:px-16"
-        style={{ backgroundImage: "url('/images/metals.jpg')" }}
+        className="flex min-h-[50vh] bg-center bg-cover relative text-white pt-32 lg:pt-36 px-6 md:px-20 lg:px-16"
+        style={{ backgroundImage: "url('/images/scenery.jpg')" }}
       >
         <div className="bg-black inset-0 absolute w-full opacity-[0.675] z-0"></div>
-        <div className="z-10 max-w-xl h-max mb-24">
+        <div className="z-10 max-w-xl h-max mb-20">
           <FadeInScroll>
             <h1 className="font-bold text-5xl mb-5">
               We give waste
-              <br /> <span className="text-[#456EFF]">a second chance.</span>
+              <br /> <span className="text-primary">a second chance.</span>
             </h1>
             <p>
               Rakan Kertas specialises in the collection of all kinds of waste
@@ -48,10 +88,10 @@ export default function AboutUs() {
       </div>
       <div className="flex flex-col lg:flex-row items-stretch">
         <div
-          className="h-96 w-full lg:w-[75rem] bg-cover bg-center"
+          className="h-[50vh] w-full lg:w-[75rem] bg-cover bg-center"
           style={{ backgroundImage: "url(/images/team.jpg)" }}
         ></div>
-        <div className="bg-primary text-white background-texture-2 px-12 grow flex items-center h-96">
+        <div className="mesh-gradient text-white px-12 py-12 grow flex items-center">
           <FadeInScroll>
             <div className="h-max">
               <h2 className="text-4xl lg:text-5xl font-bold mb-5">
@@ -64,16 +104,50 @@ export default function AboutUs() {
               <br />
               <p>
                 Guided by our unwavering commitment to environmental
-                stewardship, we are dedicated ot minimising the ecological
+                stewardship, we are dedicated to minimising the ecological
                 impact of waste. With every collection, we move one step closer
                 to a cleaner, more sustainable future.
+              </p>
+              <br />
+              <p>
+                We pride ourselves in our innovative recycling solutions, which
+                we offer to other businesses to help make it easier for everyone
+                to recycle. It is our job to keep the environment clean and
+                recycle materials for reuse, to ensure the future
+                generation&apos;s access to a clean and green environment.
               </p>
             </div>
           </FadeInScroll>
         </div>
       </div>
-      <div></div>
-      <div className="px-16 py-16">
+      <div className="px-12 py-12 flex flex-col items-center lg:flex-row lg:items-start justify-center gap-10">
+        <div className="w-full lg:w-4/6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-5">What we value</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 place-items-stretch w-full">
+            {values.map((value) => (
+              <Value key={value.title} {...value} />
+            ))}
+          </div>
+        </div>
+        <div className="w-full lg:w-2/6 text-center lg:text-left">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-5">
+            ...and our mission is to <span className="text-accent">lead</span>{" "}
+            in the field of recycling by:
+          </h2>
+          <ul className="list-image-[url(/images/star-solid.svg)] list-inside text-lg">
+            {[
+              "Developing sustianable practices",
+              "Fostering a community environment",
+              "Creating a legacy of positive environmental impacts",
+            ].map((text) => (
+              <li key={text}>
+                <span className="ml-1">{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="px-16 py-16 polka">
         <Carousel className="mx-auto" opts={{ align: "center", loop: true }}>
           <CarouselContent>
             {carouselImages.map((image) => (
@@ -94,5 +168,17 @@ export default function AboutUs() {
         </Carousel>
       </div>
     </>
+  );
+}
+
+export function Value({ title, icon, description }: Value) {
+  return (
+    <div className="w-full h-full bg-gray-200 rounded-md p-3 shadow-md flex flex-col">
+      <h3 className="text-xl font-semibold">
+        <FontAwesomeIcon icon={icon} className="mr-2 text-primary" />
+        {title}
+      </h3>
+      <p className="mt-auto my-auto">{description}</p>
+    </div>
   );
 }
