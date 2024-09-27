@@ -10,6 +10,16 @@
   background-image: url("/images/paper-texture-2.png");
 }
 
+.mesh-gradient {
+  background-image: url("/images/mesh-gradient.png");
+  background-size: cover;
+}
+
+.polka {
+  background-image: url("/images/polka.png");
+  background-size: cover;
+}
+
 .curved-underline {
   position: relative;
 }

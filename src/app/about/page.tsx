@@ -29,7 +29,7 @@ export default function AboutUs() {
           <FadeInScroll>
             <h1 className="font-bold text-5xl mb-5">
               We give waste
-              <br /> <span className="text-accent">a second chance.</span>
+              <br /> <span className="text-[#456EFF]">a second chance.</span>
             </h1>
             <p>
               Rakan Kertas specialises in the collection of all kinds of waste
@@ -72,6 +72,7 @@ export default function AboutUs() {
           </FadeInScroll>
         </div>
       </div>
+      <div></div>
       <div className="px-16 py-16">
         <Carousel className="mx-auto" opts={{ align: "center", loop: true }}>
           <CarouselContent>

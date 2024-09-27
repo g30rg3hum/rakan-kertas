@@ -104,7 +104,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col lg:flex-row">
-        <div className="bg-gray-950 text-white background-texture-2 pt-48 px-6 lg:px-[5.5rem] lg:w-1/2 pb-36 text-center lg:text-left">
+        <div className="bg-gray-950 text-white polka pt-48 px-6 lg:px-[5.5rem] lg:w-1/2 pb-36 text-center lg:text-left">
           <FadeInScroll>
             <h1 className="font-bold text-5xl lg:text-[3.62rem] mb-7 leading-tight">
               Your <span className="curved-underline">recycling</span> ally!
@@ -133,6 +133,17 @@ export default function Home() {
         <AnimateScrollWrapper>
           <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-14">
             <motion.div variants={baseVariants({ y: 100 }, { y: 0 })}>
+              <FramerHoverWrapper>
+                <img
+                  src="/images/what-image.jpg"
+                  alt="What image"
+                  className="w-full md:max-w-xl rounded-lg shadow-lg"
+                />
+              </FramerHoverWrapper>
+            </motion.div>
+            <motion.div
+              variants={baseVariants({ x: 10, display: "hidden" }, { x: 0 })}
+            >
               <div className="w-full sm:max-w-xl text-center lg:text-left">
                 <span className="text-md sm:text-lg italic">
                   What do we do?
@@ -191,21 +202,10 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            <motion.div
-              variants={baseVariants({ x: 10, display: "hidden" }, { x: 0 })}
-            >
-              <FramerHoverWrapper>
-                <img
-                  src="/images/what-image.jpg"
-                  alt="What image"
-                  className="w-full md:max-w-2xl rounded-lg shadow-lg"
-                />
-              </FramerHoverWrapper>
-            </motion.div>
           </div>
         </AnimateScrollWrapper>
       </div>
-      <div className="py-16 px-6 bg-primary text-white relative text-center flex flex-col items-center background-texture-2">
+      <div className="py-16 px-6 bg-primary text-white relative text-center flex flex-col items-center mesh-gradient">
         <FadeInScroll>
           <span className="text-md sm:text-lg italic">
             What can we offer you?
@@ -339,7 +339,7 @@ function ServiceCard({
         <div className="w-full max-w-sm border border-[6px] border-white rounded-lg px-5 py-12 shadow-md relative select-none">
           <FontAwesomeIcon
             icon={icon}
-            className="text-5xl text-white absolute top-[-20px] translate-x-[-50%] bg-primary px-4 background-texture-2"
+            className="text-4xl text-primary absolute top-[-30px] translate-x-[-50%] bg-white p-3 rounded-lg"
           />
           <h3 className="text-3xl font-bold">
             {titlePtOne}
