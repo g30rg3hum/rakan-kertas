@@ -48,7 +48,7 @@ export function AnimateScrollWrapper({ children }: AnimateScrollWrapperProps) {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.05 }}
-      transition={{ staggerChildren: 0.3 }}
+      transition={{ staggerChildren: 0.5 }}
     >
       {children}
     </motion.div>

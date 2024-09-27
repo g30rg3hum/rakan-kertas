@@ -1,6 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { Image } from "@/components/custom-ui/image-slideshow";
-import { FadeInScroll } from "@/components/helpers/framer-scroll-helpers";
+import {
+  AnimateScrollWrapper,
+  FadeInScroll,
+  scrollBaseVariants as baseVariants,
+} from "@/components/helpers/framer-scroll-helpers";
 import {
   Carousel,
   CarouselContent,
@@ -16,6 +20,7 @@ import {
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as motion from "framer-motion/client";
 
 const carouselImages: Image[] = [
   { src: "/images/carousel-1.jpg", alt: "carousel 1" },
@@ -122,29 +127,51 @@ export default function AboutUs() {
       </div>
       <div className="px-12 py-12 flex flex-col items-center lg:flex-row lg:items-start justify-center gap-10">
         <div className="w-full lg:w-4/6">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-5">What we value</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 place-items-stretch w-full">
-            {values.map((value) => (
-              <Value key={value.title} {...value} />
-            ))}
-          </div>
+          <AnimateScrollWrapper>
+            <motion.div variants={baseVariants({ x: -50 }, { x: 0 })}>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-5">
+                What we value
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 place-items-stretch w-full">
+              {values.map((value) => (
+                <motion.div
+                  key={value.title}
+                  variants={baseVariants({ x: -50 }, { x: 0 })}
+                >
+                  <Value {...value} />
+                </motion.div>
+              ))}
+            </div>
+          </AnimateScrollWrapper>
         </div>
         <div className="w-full lg:w-2/6 text-center lg:text-left">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-5">
-            ...and our mission is to <span className="text-accent">lead</span>{" "}
-            in the field of recycling by:
-          </h2>
-          <ul className="list-image-[url(/images/star-solid.svg)] list-inside text-lg">
-            {[
-              "Developing sustianable practices",
-              "Fostering a community environment",
-              "Creating a legacy of positive environmental impacts",
-            ].map((text) => (
-              <li key={text}>
-                <span className="ml-1">{text}</span>
-              </li>
-            ))}
-          </ul>
+          <AnimateScrollWrapper>
+            <motion.div variants={baseVariants({ x: 50 }, { x: 0 })}>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-5">
+                ...and our mission is to{" "}
+                <span className="text-accent">lead</span> in the field of
+                recycling by:
+              </h2>
+            </motion.div>
+            <ul className="list-image-[url(/images/star-solid.svg)] list-inside text-lg">
+              {[
+                "Developing sustianable practices",
+                "Fostering a community environment",
+                "Creating a legacy of positive environmental impacts",
+              ].map((text: string) => (
+                <motion.div
+                  key={text}
+                  variants={baseVariants({ x: 50 }, { x: 0 })}
+                >
+                  <li>
+                    <span className="ml-1">{text}</span>
+                  </li>
+                </motion.div>
+              ))}
+            </ul>
+          </AnimateScrollWrapper>
         </div>
       </div>
       <div className="px-16 py-16 polka">
@@ -171,7 +198,7 @@ export default function AboutUs() {
   );
 }
 
-export function Value({ title, icon, description }: Value) {
+function Value({ title, icon, description }: Value) {
   return (
     <div className="w-full h-full bg-gray-200 rounded-md p-3 shadow-md flex flex-col">
       <h3 className="text-xl font-semibold">
