@@ -128,7 +128,7 @@ export default function AboutUs() {
       <div className="px-12 py-12 flex flex-col items-center lg:flex-row lg:items-start justify-center gap-10">
         <div className="w-full lg:w-4/6">
           <AnimateScrollWrapper>
-            <motion.div variants={baseVariants({ x: -50 }, { x: 0 })}>
+            <motion.div variants={baseVariants({ x: -20 }, { x: 0 })}>
               <h2 className="text-4xl lg:text-5xl font-bold mb-5">
                 What we value
               </h2>
@@ -138,7 +138,7 @@ export default function AboutUs() {
               {values.map((value) => (
                 <motion.div
                   key={value.title}
-                  variants={baseVariants({ x: -50 }, { x: 0 })}
+                  variants={baseVariants({ x: -20 }, { x: 0 })}
                 >
                   <Value {...value} />
                 </motion.div>
