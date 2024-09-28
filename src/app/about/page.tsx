@@ -134,7 +134,7 @@ export default function AboutUs() {
               </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 place-items-stretch w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 place-items-stretch w-full">
               {values.map((value) => (
                 <motion.div
                   key={value.title}
