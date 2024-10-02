@@ -20,6 +20,11 @@
   background-size: cover;
 }
 
+.starry-sky {
+  background-image: url("/images/starry-sky.png");
+  background-size: cover;
+}
+
 .curved-underline {
   position: relative;
 }

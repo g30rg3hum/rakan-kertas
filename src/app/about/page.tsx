@@ -93,7 +93,7 @@ export default function AboutUs() {
       </div>
       <div className="flex flex-col lg:flex-row items-stretch">
         <div
-          className="h-[50vh] w-full lg:w-[75rem] bg-cover bg-center"
+          className="h-96 lg:h-auto w-full bg-cover bg-center"
           style={{ backgroundImage: "url(/images/team.jpg)" }}
         ></div>
         <div className="mesh-gradient text-white px-12 py-12 grow flex items-center">
