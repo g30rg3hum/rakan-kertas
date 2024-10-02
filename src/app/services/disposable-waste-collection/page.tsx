@@ -1,4 +1,5 @@
 import {
+  faHandHolding,
   faPhone,
   faTrash,
   faTruck,
@@ -15,7 +16,7 @@ export default function DisposableWasteCollection() {
           <img
             src="/images/garbage-truck.png"
             alt="Garbage truck illustration"
-            className="w-full max-w-lg shadow-lg"
+            className="w-full max-w-md shadow-lg"
           />
           <div className="w-full max-w-lg">
             <h1 className="font-bold text-4xl lg:text-5xl mb-5">
@@ -31,7 +32,7 @@ export default function DisposableWasteCollection() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:gap-10 lg:p-10 items-center">
+      <div className="flex flex-col lg:gap-10 lg:p-10 items-center bg-gray-100 background-texture">
         <Step
           title="1. Contact us"
           icon={faPhone}
@@ -62,7 +63,7 @@ export default function DisposableWasteCollection() {
         />
         <Step
           title="4. Collection"
-          icon={faTruck}
+          icon={faHandHolding}
           image="/images/moving-truck.jpg"
           body={[
             "When the waste bins are full, give us a call and we will send a truck to collect the waste.",
@@ -89,7 +90,7 @@ function Step({ title, icon, body, image, right }: StepProps) {
         right ? "lg:ml-10" : "lg:mr-10"
       }`}
     >
-      <div className="flex flex-col justify-center p-12 w-full lg:max-w-xl bg-gray-200 background-texture lg:rounded-l-xl">
+      <div className="flex flex-col justify-center p-12 w-full lg:max-w-xl bg-white background-texture lg:rounded-l-xl">
         <h2 className="text-4xl lg:text-5xl font-bold mb-5">
           {title} <FontAwesomeIcon icon={icon} className="ml-1 text-primary" />
         </h2>
