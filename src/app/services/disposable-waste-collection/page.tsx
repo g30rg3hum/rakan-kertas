@@ -1,3 +1,4 @@
+import LinkButton from "@/components/custom-ui/link-button";
 import {
   faHandHolding,
   faPhone,
@@ -41,6 +42,7 @@ export default function DisposableWasteCollection() {
             "There is a large amount of waste of which you have nowhere to dispose it at. It is taking up space and it's making the environment unpleasant! Fret not, Rakan Kertas is here to help you. Email or give us a call and we can help work something out.",
             "Either click the get a quote button at the top right or scroll down to the bottom for all our contact and location details!",
           ]}
+          rightArrow
         />
         <Step
           title="2. Trucks sent"
@@ -51,6 +53,7 @@ export default function DisposableWasteCollection() {
             "When we arrive, our team will help you place it in the most convenient spot for you.",
           ]}
           right
+          leftArrow
         />
         <Step
           title="3. Throw waste"
@@ -60,6 +63,7 @@ export default function DisposableWasteCollection() {
             "With the waste bins planted at your proposed site, you can start throwing your waste in them.",
             "Toss to your heart's content! Don't worry about what you throw in there, we will take care of it for you.",
           ]}
+          rightArrow
         />
         <Step
           title="4. Collection"
@@ -72,6 +76,18 @@ export default function DisposableWasteCollection() {
           right
         />
       </div>
+      <div className="mesh-gradient text-center py-16 px-6 text-white flex flex-col items-center">
+        <h2 className="font-bold text-4xl lg:text-5xl mb-5 text-center">
+          Sounds like something you&apos;re interested in?
+        </h2>
+        <p className="w-full max-w-4xl">
+          This service is perfect for those who have large amounts of waste and
+          are unsure of where to dispose of it, or just want overall convenient
+          waste management handled for them!
+        </p>
+        <br />
+        <LinkButton href="" variant="secondary" text="Get a quote" />
+      </div>
     </>
   );
 }
@@ -82,11 +98,21 @@ interface StepProps {
   body: string[];
   image: string;
   right?: boolean;
+  rightArrow?: boolean;
+  leftArrow?: boolean;
 }
-function Step({ title, icon, body, image, right }: StepProps) {
+function Step({
+  title,
+  icon,
+  body,
+  image,
+  right,
+  rightArrow = false,
+  leftArrow = false,
+}: StepProps) {
   return (
     <div
-      className={`flex flex-col lg:flex-row items-stretch lg:rounded-xl w-full lg:w-max shadow-lg lg:border border-black ${
+      className={`flex flex-col lg:flex-row items-stretch lg:rounded-xl w-full lg:w-max shadow-lg lg:border border-black relative ${
         right ? "lg:ml-10" : "lg:mr-10"
       }`}
     >
@@ -104,6 +130,20 @@ function Step({ title, icon, body, image, right }: StepProps) {
         className="h-60 lg:h-auto w-full lg:w-96 bg-cover bg-center lg:rounded-r-xl"
         style={{ backgroundImage: `url(${image})` }}
       ></div>
+      {rightArrow && (
+        <img
+          src="/images/tb-right-arrow.svg"
+          alt="Right arrow"
+          className="w-10 absolute bottom-[-3rem] right-[-3rem] z-20 hidden lg:block"
+        />
+      )}
+      {leftArrow && (
+        <img
+          src="/images/tb-left-arrow.svg"
+          alt="Left arrow"
+          className="w-10 absolute bottom-[-3rem] left-[-3rem] z-20 hidden lg:block"
+        />
+      )}
     </div>
   );
 }
