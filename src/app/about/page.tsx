@@ -96,7 +96,7 @@ export default function AboutUs() {
           className="h-96 lg:h-auto w-full bg-cover bg-center"
           style={{ backgroundImage: "url(/images/team.jpg)" }}
         ></div>
-        <div className="mesh-gradient text-white px-12 py-12 grow flex items-center">
+        <div className="mesh-gradient text-white px-6 lg:px-12 py-12 grow flex items-center">
           <FadeInScroll>
             <div className="h-max">
               <h2 className="text-4xl lg:text-5xl font-bold mb-5">
@@ -125,7 +125,7 @@ export default function AboutUs() {
           </FadeInScroll>
         </div>
       </div>
-      <div className="px-12 py-12 flex flex-col items-center lg:flex-row lg:items-start justify-center gap-10">
+      <div className="px-6 lg:px-12 py-12 flex flex-col items-center lg:flex-row lg:items-start justify-center gap-10">
         <div className="w-full lg:w-4/6">
           <AnimateScrollWrapper>
             <motion.div variants={baseVariants({ x: -20 }, { x: 0 })}>

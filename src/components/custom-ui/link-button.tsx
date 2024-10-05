@@ -4,7 +4,7 @@ import * as motion from "framer-motion/client";
 
 interface Props {
   href: string;
-  variant: "default" | "secondary";
+  variant: "default" | "secondary" | "link";
   xPadding?: number;
   yPadding?: number;
   text: string;
