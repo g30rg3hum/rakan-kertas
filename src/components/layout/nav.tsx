@@ -4,7 +4,12 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@radix-ui/react-navigation-menu";
-import { NavigationMenu, NavigationMenuItem } from "../ui/navigation-menu";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+} from "../ui/navigation-menu";
 import { Button, buttonVariants } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { useState } from "react";
@@ -22,15 +27,40 @@ export default function Nav() {
       <div className="hidden md:block">
         <NavigationMenu>
           <NavigationMenuList className="flex items-center gap-4">
-            {navItems.slice(0, -1).map((item) => (
-              <NavigationMenuItem key={item.name}>
-                <NavigationMenuLink href={item.href}>
-                  <span className="inline-block hover:scale-[1.05] transition text-md font-semibold">
-                    {item.name}
-                  </span>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
+            {navItems.slice(0, -1).map((item) => {
+              if (item.name === "Services") {
+                return (
+                  <NavigationMenuItem key={item.name}>
+                    <NavigationMenuTrigger className="text-md font-semibold">
+                      Services
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="bg-white p-5 flex flex-col gap-2 text-center font-semibold">
+                      <NavigationMenuLink
+                        href="/services/disposable-waste-collection"
+                        className="w-[150px] hover:scale-[1.05] transition"
+                      >
+                        Disposable Waste
+                      </NavigationMenuLink>
+                      <NavigationMenuLink
+                        href="/services/recycling-material-collection"
+                        className="w-[150px] hover:scale-[1.05] transition"
+                      >
+                        Recycling Materials
+                      </NavigationMenuLink>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                );
+              }
+              return (
+                <NavigationMenuItem key={item.name}>
+                  <NavigationMenuLink href={item.href}>
+                    <span className="inline-block hover:scale-[1.05] transition text-md font-semibold">
+                      {item.name}
+                    </span>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              );
+            })}
             <NavigationMenuItem>
               <motion.button
                 whileHover={{ scale: 1.02 }}
@@ -61,13 +91,33 @@ export default function Nav() {
           >
             <NavigationMenu>
               <NavigationMenuList className="flex flex-col gap-4">
-                {navItems.map((item) => (
-                  <NavigationMenuItem key={item.name}>
-                    <NavigationMenuLink href={item.href}>
-                      <HoverScale>{item.name}</HoverScale>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
+                {navItems.map((item) => {
+                  if (item.name === "Services") {
+                    return (
+                      <>
+                        <NavigationMenuItem key="Disposable Waste Collection">
+                          <NavigationMenuLink href="/services/disposable-waste-collection">
+                            <HoverScale>Disposable Waste Collection</HoverScale>
+                          </NavigationMenuLink>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem key="Recycling Material Collection">
+                          <NavigationMenuLink href="/services/recycling-material-collection">
+                            <HoverScale>
+                              Recycling Material Collection
+                            </HoverScale>
+                          </NavigationMenuLink>
+                        </NavigationMenuItem>
+                      </>
+                    );
+                  }
+                  return (
+                    <NavigationMenuItem key={item.name}>
+                      <NavigationMenuLink href={item.href}>
+                        <HoverScale>{item.name}</HoverScale>
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  );
+                })}
               </NavigationMenuList>
             </NavigationMenu>
           </SheetContent>

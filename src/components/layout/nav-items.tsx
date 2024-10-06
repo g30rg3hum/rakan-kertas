@@ -4,16 +4,12 @@ const navItems = [
     href: "/",
   },
   {
-    name: "Services",
-    href: "",
-  },
-  {
-    name: "Materials",
-    href: "",
-  },
-  {
     name: "About Us",
     href: "/about",
+  },
+  {
+    name: "Services",
+    href: "",
   },
   {
     name: "Get a quote",
