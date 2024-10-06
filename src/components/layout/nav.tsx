@@ -34,7 +34,7 @@ export default function Nav() {
                     <NavigationMenuTrigger className="text-md font-semibold">
                       Services
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bg-white p-5 flex flex-col gap-2 text-center font-semibold">
+                    <NavigationMenuContent className="bg-white p-5 flex flex-col gap-3 text-center font-semibold">
                       <NavigationMenuLink
                         href="/services/disposable-waste-collection"
                         className="w-[150px] hover:scale-[1.05] transition"
