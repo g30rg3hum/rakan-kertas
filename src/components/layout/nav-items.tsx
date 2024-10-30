@@ -13,7 +13,7 @@ const navItems = [
   },
   {
     name: "Get a quote",
-    href: "",
+    href: "/get-a-quote",
   },
 ];
 

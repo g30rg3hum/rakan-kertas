@@ -94,20 +94,20 @@ export default function Nav() {
                 {navItems.map((item) => {
                   if (item.name === "Services") {
                     return (
-                      <>
-                        <NavigationMenuItem key="Disposable Waste Collection">
+                      <div key="services">
+                        <NavigationMenuItem>
                           <NavigationMenuLink href="/services/disposable-waste-collection">
                             <HoverScale>Disposable Waste Collection</HoverScale>
                           </NavigationMenuLink>
                         </NavigationMenuItem>
-                        <NavigationMenuItem key="Recycling Material Collection">
+                        <NavigationMenuItem>
                           <NavigationMenuLink href="/services/recycling-material-collection">
                             <HoverScale>
                               Recycling Material Collection
                             </HoverScale>
                           </NavigationMenuLink>
                         </NavigationMenuItem>
-                      </>
+                      </div>
                     );
                   }
                   return (
