@@ -64,7 +64,7 @@ export function EmailForm() {
               <FormControl>
                 <Textarea
                   placeholder="Tell us about what you need"
-                  className="resize-none h-40"
+                  className="resize-none h-48"
                   {...field}
                 />
               </FormControl>
