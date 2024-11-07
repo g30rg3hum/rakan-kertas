@@ -95,7 +95,7 @@ export default function Nav() {
                   if (item.name === "Services") {
                     return (
                       <div key="services">
-                        <NavigationMenuItem>
+                        <NavigationMenuItem className="mb-4">
                           <NavigationMenuLink href="/services/disposable-waste-collection">
                             <HoverScale>Disposable Waste Collection</HoverScale>
                           </NavigationMenuLink>
