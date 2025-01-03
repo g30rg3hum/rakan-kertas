@@ -36,6 +36,7 @@ const heroImages: Image[] = [
   { src: "/images/company/17.jpg", alt: "Outside company office 1" },
   { src: "/images/company/5.jpg", alt: "Recycling area" },
   { src: "/images/company/8.jpg", alt: "Recycled cylinders" },
+  { src: "images/company/10.jpg", alt: "Lorry" },
 ];
 
 const companyUpsideFacts: CompanyUpsideFactProps[] = [
