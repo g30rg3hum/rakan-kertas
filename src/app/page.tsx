@@ -83,20 +83,22 @@ type QuestionAndAnswer = {
 };
 const questionAndAnswers: QuestionAndAnswer[] = [
   {
-    question: "Question 1",
-    answer: "Answer to question 1.",
+    question: "What is the pricing that Rakan Kertas offers?",
+    answer:
+      "We offer the best competitive market pricing. Feel free to contact us for a quote.",
   },
   {
-    question: "Question 2",
-    answer: "Answer to question 2.",
+    question: "Is Rakan Kertas reliable?",
+    answer: "Yes, we have 30+ years of experience in the recycling industry.",
   },
   {
-    question: "Question 3",
-    answer: "Answer to question 3.",
+    question: "Can Rakan Kertas collect or do I have to deliver?",
+    answer: "We offer collection services on top of drop-off services.",
   },
   {
-    question: "Question 4",
-    answer: "Answer to question 4.",
+    question: "How do I know what is recyclable?",
+    answer:
+      "Refer to our Recycling Materials page under services for specific materials we support.",
   },
 ];
 
