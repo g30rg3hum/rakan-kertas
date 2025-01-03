@@ -14,15 +14,15 @@ const center: Position = { lat: 5.418588619577099, lng: 100.38607336141544 };
 
 const markers: MarkerType[] = [
   {
-    position: { lat: 5.418588619577099, lng: 100.38607336141544 },
+    position: { lat: 5.418619138014335, lng: 100.38474609406381 },
     title: "Main office",
   },
   {
-    position: { lat: 5.357390934012585, lng: 100.41453002503266 },
+    position: { lat: 5.362658636259797, lng: 100.41593739459336 },
     title: "Second office",
   },
   {
-    position: { lat: 5.300321859253804, lng: 100.28687140615803 },
+    position: { lat: 5.300114220855713, lng: 100.28693110240704 },
     title: "LBS Industries office",
   },
 ];
