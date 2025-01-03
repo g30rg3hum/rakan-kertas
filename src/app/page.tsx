@@ -33,7 +33,7 @@ import {
 import FramerHoverWrapper from "@/components/helpers/framer-hover-wrapper";
 
 const heroImages: Image[] = [
-  { src: "/images/company/1.jpg", alt: "Outside company office 1" },
+  { src: "/images/company/17.jpg", alt: "Outside company office 1" },
   { src: "/images/company/5.jpg", alt: "Recycling area" },
   { src: "/images/company/8.jpg", alt: "Recycled cylinders" },
 ];
