@@ -9,8 +9,18 @@ export default function Footer() {
         <h5 className="font-bold">&copy; 2024 Rakan Kertas Sdn Bhd</h5>
         <p className="mb-2">Also operating as LBS Industries</p>
         <div className="flex gap-1">
-          <FaFacebookSquare size={30} />
-          <FaLinkedin size={30} />
+          <Link
+            href="https://www.linkedin.com/company/rakan-kertas-sdn-bhd/about/"
+            target="_blank"
+          >
+            <FaLinkedin size={30} />
+          </Link>{" "}
+          <Link
+            href="https://www.facebook.com/people/Rakan-Kertas-Sdn-Bhd/61557393400897/"
+            target="_blank"
+          >
+            <FaFacebookSquare size={30} />
+          </Link>
         </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-6">
