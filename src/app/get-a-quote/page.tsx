@@ -33,9 +33,9 @@ export default function GetAQuote() {
       <AnimateScrollWrapper>
         <div
           className="px-5 flex flex-col md:items-center justify-center gap-5 bg-cover"
-          style={{ backgroundImage: "url('/images/forest.png')" }}
+          style={{ backgroundImage: "url('/images/darkenedgreenery.png')" }}
         >
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-[7.5rem]">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-[9rem]">
             <motion.div
               variants={baseVariants(
                 { opacity: 0, y: 20 },

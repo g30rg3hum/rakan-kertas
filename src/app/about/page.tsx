@@ -23,11 +23,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as motion from "framer-motion/client";
 
 const carouselImages: Image[] = [
-  { src: "/images/carousel-1.jpg", alt: "carousel 1" },
-  { src: "/images/carousel-2.jpg", alt: "carousel 2" },
-  { src: "/images/carousel-3.jpg", alt: "carousel 3" },
-  { src: "/images/carousel-4.jpg", alt: "carousel 5" },
-  { src: "/images/carousel-5.jpg", alt: "carousel 6" },
+  { src: "/images/company/2.jpg", alt: "carousel image 1" },
+  { src: "/images/company/5.jpg", alt: "carousel image 2" },
+  { src: "/images/company/7.jpg", alt: "carousel image 3" },
+  { src: "/images/company/11.jpg", alt: "carousel image 4" },
+  { src: "/images/company/16.png", alt: "carousel image 5" },
 ];
 
 interface Value {
@@ -67,9 +67,9 @@ export default function AboutUs() {
     <>
       <div
         className="flex min-h-[50vh] bg-center bg-cover relative text-white pt-32 lg:pt-36 px-6 md:px-20 lg:px-16"
-        style={{ backgroundImage: "url('/images/scenery.jpg')" }}
+        style={{ backgroundImage: "url('/images/greenery.jpg')" }}
       >
-        <div className="bg-black inset-0 absolute w-full opacity-[0.675] z-0"></div>
+        <div className="bg-black inset-0 absolute w-full opacity-[0.8] z-0"></div>
         <div className="z-10 max-w-xl h-max mb-20">
           <FadeInScroll>
             <h1 className="font-bold text-5xl mb-5">
@@ -94,7 +94,7 @@ export default function AboutUs() {
       <div className="flex flex-col lg:flex-row items-stretch">
         <div
           className="h-96 lg:h-auto w-full bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/team.jpg)" }}
+          style={{ backgroundImage: "url(/images/company/14.jpg)" }}
         ></div>
         <div className="mesh-gradient text-white px-6 lg:px-12 py-16 grow flex items-center">
           <FadeInScroll>

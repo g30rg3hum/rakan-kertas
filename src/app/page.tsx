@@ -33,9 +33,9 @@ import {
 import FramerHoverWrapper from "@/components/helpers/framer-hover-wrapper";
 
 const heroImages: Image[] = [
-  { src: "/images/hero-image1.jpg", alt: "Hero image 1" },
-  { src: "/images/hero-image2.jpg", alt: "Hero image 2" },
-  { src: "/images/hero-image3.jpg", alt: "Hero image 3" },
+  { src: "/images/company/1.jpg", alt: "Outside company office 1" },
+  { src: "/images/company/5.jpg", alt: "Recycling area" },
+  { src: "/images/company/8.jpg", alt: "Recycled cylinders" },
 ];
 
 const companyUpsideFacts: CompanyUpsideFactProps[] = [
@@ -137,8 +137,8 @@ export default function Home() {
             <motion.div variants={baseVariants({ y: 100 }, { y: 0 })}>
               <FramerHoverWrapper>
                 <img
-                  src="/images/what-image.jpg"
-                  alt="What image"
+                  src="/images/company/9.jpg"
+                  alt="Recycled wood"
                   className="w-full md:max-w-xl rounded-lg shadow-lg"
                 />
               </FramerHoverWrapper>
@@ -260,7 +260,7 @@ export default function Home() {
           </div>
         </AnimateScrollWrapper>
       </div>
-      <div className="h-[650px] bg-[url('/images/landingpage.jpg')] bg-cover bg-center relative after:content-[''] after:absolute after:bottom-0 after:w-full after:h-[300px] after:bg-gradient-to-b after:from-transparent after:to-[#2a2a36] after:z-2 after:background-texture-2"></div>
+      <div className="h-[650px] bg-[url('/images/company/13.jpg')] bg-cover bg-center relative after:content-[''] after:absolute after:bottom-0 after:w-full after:h-[300px] after:bg-gradient-to-b after:from-transparent after:to-[#2a2a36] after:z-2 after:background-texture-2"></div>
       <div className="py-16 px-6 bg-[#19192E] relative text-white md:px-20 background-texture-2">
         <AnimateScrollWrapper>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
