@@ -6,6 +6,7 @@ import Footer from "@/components/layout/footer";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import LanguageProvider from "@/components/language/LanguageContext";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -28,9 +29,11 @@ export default function RootLayout({
       <body
         className={`flex flex-col min-h-screen ${instrumentSans.className} antialiased background-texture bg-gray-50`}
       >
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

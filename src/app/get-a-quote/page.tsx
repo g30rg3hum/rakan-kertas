@@ -5,10 +5,6 @@ import {
   scrollBaseVariants as baseVariants,
 } from "@/components/helpers/framer-scroll-helpers";
 import * as motion from "framer-motion/client";
-import GoogleMapComponent, {
-  Position,
-  MarkerType,
-} from "@/components/custom-ui/google-map";
 
 const center: Position = { lat: 5.418588619577099, lng: 100.38607336141544 };
 
@@ -35,7 +31,7 @@ export default function GetAQuote() {
           className="px-5 flex flex-col md:items-center justify-center gap-5 bg-cover"
           style={{ backgroundImage: "url('/images/darkenedgreenery.png')" }}
         >
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-[9rem]">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-[9rem] mb-16">
             <motion.div
               variants={baseVariants(
                 { opacity: 0, y: 20 },
@@ -62,7 +58,7 @@ export default function GetAQuote() {
               )}
               className="w-full lg:max-w-xl lg:h-[510px]"
             >
-              <Card className="p-4 h-full lg:pt-16">
+              <Card className="p-4 h-full lg:pt-16 mb-1">
                 <CardHeader>
                   <CardTitle className="font-bold text-3xl">
                     Or find us directly! 📌
@@ -96,13 +92,6 @@ export default function GetAQuote() {
               </Card>
             </motion.div>
           </div>
-
-          <motion.div
-            variants={baseVariants({ opacity: 0, y: 20 }, { opacity: 1, y: 0 })}
-            className="mb-16 w-full lg:max-w-[952px]"
-          >
-            <GoogleMapComponent center={center} markers={markers} />
-          </motion.div>
         </div>
       </AnimateScrollWrapper>
     </>
