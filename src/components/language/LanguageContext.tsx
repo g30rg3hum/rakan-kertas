@@ -19,7 +19,7 @@ export default function LanguageProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [language, setLanguage] = useState<Language>("ch");
+  const [language, setLanguage] = useState<Language>("en");
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
