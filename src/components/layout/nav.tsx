@@ -15,7 +15,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import HoverScale from "../custom-ui/hover-scale";
 import * as motion from "framer-motion/client";
-import navItems from "./nav-items";
 import { useLanguage } from "../language/LanguageContext";
 import {
   DropdownMenu,
@@ -24,10 +23,18 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { navItemsChinese, navItemsEnglish, navItemsMalay } from "./nav-items";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
+
+  const navItems =
+    language === "en"
+      ? navItemsEnglish
+      : language === "ch"
+      ? navItemsChinese
+      : navItemsMalay;
 
   return (
     <>
@@ -35,24 +42,40 @@ export default function Nav() {
         <NavigationMenu>
           <NavigationMenuList className="flex items-center gap-4">
             {navItems.slice(0, -1).map((item) => {
-              if (item.name === "Services") {
+              if (
+                item.name === "Services" ||
+                item.name === "Perkhidmatan" ||
+                item.name === "服务"
+              ) {
                 return (
                   <NavigationMenuItem key={item.name}>
                     <NavigationMenuTrigger className="text-md font-semibold">
-                      Services
+                      {language === "en"
+                        ? "Services"
+                        : language === "ch"
+                        ? "服务"
+                        : "Perkhidmatan"}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent className="bg-white p-5 flex flex-col gap-3 text-center font-semibold">
                       <NavigationMenuLink
                         href="/services/disposable-waste-collection"
                         className="w-[150px] hover:scale-[1.05] transition"
                       >
-                        Disposable Waste
+                        {language === "en"
+                          ? "Disposable Waste"
+                          : language === "ch"
+                          ? "一次性废物"
+                          : "Sisa Buangan Sekali Pakai"}
                       </NavigationMenuLink>
                       <NavigationMenuLink
                         href="/services/recycling-material-collection"
                         className="w-[150px] hover:scale-[1.05] transition"
                       >
-                        Recycling Materials
+                        {language === "en"
+                          ? "Recycling Materials"
+                          : language === "ch"
+                          ? "回收材料"
+                          : "Bahan Kitar Semula"}
                       </NavigationMenuLink>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -96,13 +119,28 @@ export default function Nav() {
                 >
                   <DropdownMenuGroup>
                     <DropdownMenuItem onClick={() => setLanguage("en")}>
-                      English 🇬🇧
+                      {language === "en"
+                        ? "English"
+                        : language === "ch"
+                        ? "英语"
+                        : "Inggeris"}{" "}
+                      🇬🇧
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setLanguage("ch")}>
-                      Chinese 🇨🇳
+                      {language === "en"
+                        ? "Chinese"
+                        : language === "ch"
+                        ? "中国"
+                        : "Cina"}{" "}
+                      🇨🇳
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setLanguage("my")}>
-                      Malay 🇲🇾
+                      {language === "en"
+                        ? "Malay"
+                        : language === "ch"
+                        ? "马来"
+                        : "Melayu"}{" "}
+                      🇲🇾
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
                 </DropdownMenuContent>

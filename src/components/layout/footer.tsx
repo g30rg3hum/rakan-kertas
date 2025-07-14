@@ -1,13 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
-import navItems from "./nav-items";
+import { useLanguage } from "../language/LanguageContext";
+import { navItemsChinese, navItemsEnglish, navItemsMalay } from "./nav-items";
 
 export default function Footer() {
+  const language = useLanguage().language;
+  const navItems =
+    language === "en"
+      ? navItemsEnglish
+      : language === "ch"
+      ? navItemsChinese
+      : navItemsMalay;
+
   return (
     <footer className="px-6 py-10 bg-gray-950 text-white background-texture-2 flex flex-col gap-7 md:flex-row md:justify-between">
       <div>
         <h5 className="font-bold">&copy; 2024 Rakan Kertas Sdn Bhd</h5>
-        <p className="mb-2">Also operating as LBS Industries</p>
+        <p className="mb-2">
+          {language === "en"
+            ? "Also operating as LBS Industries"
+            : language === "ch"
+            ? "还以 LBS Industries 的名义运营"
+            : "Juga beroperasi sebagai LBS Industries"}
+        </p>
         <div className="flex gap-1">
           <Link
             href="https://www.linkedin.com/company/rakan-kertas-sdn-bhd/about/"
@@ -26,7 +43,13 @@ export default function Footer() {
       <div className="flex flex-col sm:flex-row gap-6">
         <div className="flex flex-col gap-6 sm:flex-row">
           <div className="flex flex-col">
-            <h5 className="font-bold mb-2">Navigation</h5>
+            <h5 className="font-bold mb-2">
+              {language === "en"
+                ? "Navigation"
+                : language === "ch"
+                ? "导航"
+                : "Navigasi"}
+            </h5>
             {navItems.map((item) => (
               <Link key={item.name} href={item.href}>
                 {item.name}
@@ -34,7 +57,13 @@ export default function Footer() {
             ))}
           </div>
           <div className="flex flex-col">
-            <h5 className="font-bold mb-2">Main office</h5>
+            <h5 className="font-bold mb-2">
+              {language === "en"
+                ? "Main office"
+                : language === "ch"
+                ? "总办事处"
+                : "Pejabat utama"}
+            </h5>
             <p>
               Lorong Mak Mandin 4,
               <br />
@@ -48,7 +77,13 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-col">
-            <h5 className="font-bold mb-2">Second office</h5>
+            <h5 className="font-bold mb-2">
+              {language === "en"
+                ? "Second office"
+                : language === "ch"
+                ? "第二办公室"
+                : "Pejabat kedua"}
+            </h5>
             <p>
               No. 15 Jalan Sega Jaya 1,
               <br />
@@ -76,10 +111,22 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-col">
-            <h5 className="font-bold mb-2">Email</h5>
+            <h5 className="font-bold mb-2">
+              {language === "en"
+                ? "Email"
+                : language === "ch"
+                ? "电子邮件"
+                : "E-mel"}
+            </h5>
             <p className="mb-6">rakankertas2@gmail.com</p>
 
-            <h5 className="font-bold mb-2">Phone</h5>
+            <h5 className="font-bold mb-2">
+              {language === "en"
+                ? "Phone"
+                : language === "ch"
+                ? "电话"
+                : "Telefon"}
+            </h5>
             <p>04-3232273 / 04-6465573</p>
           </div>
         </div>
