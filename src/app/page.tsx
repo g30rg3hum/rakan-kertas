@@ -169,7 +169,7 @@ export default function Home() {
           ? "Yes, we have 30+ years of experience in the recycling industry."
           : language === "ch"
           ? "是的，我们在回收行业有超过30年的经验。"
-          : "Ya, kami mempunyai pengalaman lebih dari 30 tahun dalam industri kitar semula。",
+          : "Ya, kami mempunyai pengalaman lebih dari 30 tahun dalam industri kitar semula.",
     },
     {
       question:
@@ -183,7 +183,7 @@ export default function Home() {
           ? "We offer collection services on top of drop-off services."
           : language === "ch"
           ? "我们提供收集服务以及自送服务。"
-          : "Kami menawarkan perkhidmatan pengumpulan di samping perkhidmatan penghantaran sendiri。",
+          : "Kami menawarkan perkhidmatan pengumpulan di samping perkhidmatan penghantaran sendiri.",
     },
     {
       question:
@@ -191,13 +191,13 @@ export default function Home() {
           ? "How do I know what is recyclable?"
           : language === "ch"
           ? "我怎么知道什么是可回收的？"
-          : "Bagaimana saya tahu apa yang boleh dikitar semula？",
+          : "Bagaimana saya tahu apa yang boleh dikitar semula?",
       answer:
         language === "en"
           ? "Refer to our Recycling Materials page under services for specific materials we support."
           : language === "ch"
           ? "请参考我们服务页面下的回收材料部分，了解我们支持的具体材料。"
-          : "Rujuk halaman Bahan Kitar Semula kami di bawah perkhidmatan untuk bahan khusus yang kami sokong。",
+          : "Rujuk halaman Bahan Kitar Semula kami di bawah perkhidmatan untuk bahan khusus yang kami sokong.",
     },
   ];
 
@@ -219,7 +219,10 @@ export default function Home() {
               )}
               {language === "my" && (
                 <>
-                  Rakan <span className="curved-underline">kitar semula</span>{" "}
+                  Rakan{" "}
+                  <span className="curved-underline text-nowrap">
+                    kitar semula
+                  </span>{" "}
                   anda!
                 </>
               )}
@@ -570,7 +573,7 @@ export default function Home() {
             {questionAndAnswers.map((qa, index) => (
               <motion.div key="index" variants={baseVariants()}>
                 <AccordionItem value={`item-${index + 1}`} key={index}>
-                  <AccordionTrigger className="text-lg">
+                  <AccordionTrigger className="text-lg text-left">
                     {qa.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-base">
@@ -628,9 +631,9 @@ function ServiceCard({
   buttonLink,
 }: ServiceCardProps) {
   return (
-    <div className="flex flex-col gap-6 items-center z-20">
-      <FramerHoverWrapper>
-        <div className="w-full max-w-sm border border-[6px] border-white rounded-lg px-5 py-12 shadow-md relative select-none">
+    <div className="flex flex-col gap-6 items-center z-20 h-full">
+      <FramerHoverWrapper className="flex-1">
+        <div className="w-full max-w-sm border border-[6px] border-white rounded-lg px-5 py-12 shadow-md relative select-none h-full flex-1">
           <FontAwesomeIcon
             icon={icon}
             className="text-4xl text-primary absolute top-[-30px] translate-x-[-50%] bg-white p-3 rounded-lg"
@@ -641,7 +644,7 @@ function ServiceCard({
             {titlePtTwo}
           </h3>
           <br />
-          <div className="text-md h-[250px]">
+          <div className="text-md">
             <p>{paragraphOne}</p>
             <br />
             <p>{paragraphTwo}</p>
