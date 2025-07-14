@@ -1,14 +1,12 @@
 "use client";
 
 import {
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@radix-ui/react-navigation-menu";
-import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuTrigger,
   NavigationMenuContent,
+  NavigationMenuLink,
+  NavigationMenuList,
 } from "../ui/navigation-menu";
 import { Button, buttonVariants } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
@@ -18,9 +16,18 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import HoverScale from "../custom-ui/hover-scale";
 import * as motion from "framer-motion/client";
 import navItems from "./nav-items";
+import { useLanguage } from "../language/LanguageContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
 
   return (
     <>
@@ -73,6 +80,33 @@ export default function Nav() {
                   {navItems[navItems.length - 1].name}
                 </NavigationMenuLink>
               </motion.button>
+            </NavigationMenuItem>
+            <NavigationMenuItem className="">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="secondary" size="icon">
+                    {language === "en" && "🇬🇧"}
+                    {language === "ch" && "🇨🇳"}
+                    {language === "my" && "🇲🇾"}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  className="bg-white font-semibold p-5"
+                  align="end"
+                >
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem onClick={() => setLanguage("en")}>
+                      English 🇬🇧
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setLanguage("ch")}>
+                      Chinese 🇨🇳
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setLanguage("my")}>
+                      Malay 🇲🇾
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
