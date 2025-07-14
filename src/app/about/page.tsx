@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable @next/next/no-img-element */
 import { Image } from "@/components/custom-ui/image-slideshow";
 import {
@@ -5,6 +7,7 @@ import {
   FadeInScroll,
   scrollBaseVariants as baseVariants,
 } from "@/components/helpers/framer-scroll-helpers";
+import { useLanguage } from "@/components/language/LanguageContext";
 import {
   Carousel,
   CarouselContent,
@@ -35,34 +38,88 @@ interface Value {
   icon: IconDefinition;
   description: string;
 }
-const values: Value[] = [
-  {
-    title: "Transparency",
-    icon: faGlasses,
-    description:
-      "Openly sharing progress and practices with customers, ensuring integrity not only in environmental impact but also our business operations.",
-  },
-  {
-    title: "Customer-centric",
-    icon: faHeart,
-    description:
-      "Putting customers first, understanding their needs and providing solutions that are tailored to their unique requirements. We are committed to delivering the best service possible.",
-  },
-  {
-    title: "SDG-aligned",
-    icon: faLeaf,
-    description:
-      "Committed to achieving the Sustainable Development Goals set by the United Nations, we are dedicated to making a positive impact on the environment.",
-  },
-  {
-    title: "Empowerment",
-    icon: faHandFist,
-    description:
-      "Empowering our employees to make decisions and take actions that will benefit the environment and our customers.",
-  },
-];
 
 export default function AboutUs() {
+  const language = useLanguage().language;
+
+  const values: Value[] = [
+    {
+      title:
+        language === "en"
+          ? "Transparency"
+          : language === "ch"
+          ? "透明度"
+          : "Ketelusan",
+      icon: faGlasses,
+      description:
+        language === "en"
+          ? "Openly sharing progress and practices with customers, ensuring integrity not only in environmental impact but also our business operations."
+          : language === "ch"
+          ? "公开与客户分享进展和实践，确保在环境影响和商业运营方面的诚信。"
+          : "Secara terbuka berkongsi kemajuan dan amalan dengan pelanggan, memastikan integriti bukan sahaja dalam kesan alam sekitar tetapi juga operasi perniagaan kami.",
+    },
+    {
+      title:
+        language === "en"
+          ? "Customer-centric"
+          : language === "ch"
+          ? "以客户为中心"
+          : "Pelanggan berpusat",
+      icon: faHeart,
+      description:
+        language === "en"
+          ? "Putting customers first, understanding their needs and providing solutions that are tailored to their unique requirements. We are committed to delivering the best service possible."
+          : language === "ch"
+          ? "以客户为中心，理解他们的需求并提供量身定制的解决方案。我们致力于提供最佳服务。"
+          : "Meletakkan pelanggan sebagai keutamaan, memahami keperluan mereka dan menyediakan penyelesaian yang disesuaikan dengan keperluan unik mereka. Kami komited untuk memberikan perkhidmatan terbaik.",
+    },
+    {
+      title:
+        language === "en"
+          ? "SDG-aligned"
+          : language === "ch"
+          ? "可持续发展目标对齐"
+          : "Selaras dengan SDG",
+      icon: faLeaf,
+      description:
+        language === "en"
+          ? "Committed to achieving the Sustainable Development Goals set by the United Nations, we are dedicated to making a positive impact on the environment."
+          : language === "ch"
+          ? "致力于实现联合国设定的可持续发展目标，我们致力于对环境产生积极影响。"
+          : "Komited untuk mencapai Matlamat Pembangunan Lestari yang ditetapkan oleh Pertubuhan Bangsa-Bangsa Bersatu, kami berdedikasi untuk memberi impak positif kepada alam sekitar.",
+    },
+    {
+      title:
+        language === "en"
+          ? "Empowerment"
+          : language === "ch"
+          ? "赋能"
+          : "Pemberdayaan",
+      icon: faHandFist,
+      description:
+        language === "en"
+          ? "Empowering our employees to make decisions and take actions that will benefit the environment and our customers."
+          : language === "ch"
+          ? "赋能我们的员工做出有利于环境和客户的决策和行动。"
+          : "Memberdayakan pekerja kami untuk membuat keputusan dan mengambil tindakan yang akan memberi manfaat kepada alam sekitar dan pelanggan kami.",
+    },
+  ];
+
+  const bulletPoints =
+    language === "en"
+      ? [
+          "Developing sustianable practices",
+          "Fostering a community environment",
+          "Creating a legacy of positive environmental impacts",
+        ]
+      : language === "ch"
+      ? ["发展可持续实践", "培养社区环境", "创造积极的环境影响遗产"]
+      : [
+          "Membangunkan amalan lestari",
+          "Memupuk persekitaran komuniti",
+          "Mencipta warisan impak alam sekitar yang positif",
+        ];
+
   return (
     <>
       <div
@@ -73,20 +130,32 @@ export default function AboutUs() {
         <div className="z-10 max-w-xl h-max mb-20">
           <FadeInScroll>
             <h1 className="font-bold text-5xl mb-5">
-              We give waste
-              <br /> <span className="text-primary">a second chance.</span>
+              {language === "en" && "We give waste"}
+              {language === "ch" && "我们给废物"}
+              {language === "my" && "Kami memberi sisa"}
+              <br />{" "}
+              <span className="text-primary">
+                {language === "en" && "a second chance."}
+                {language === "ch" && "第二次机会。"}
+                {language === "my" && "peluang kedua."}
+              </span>
             </h1>
             <p>
-              Rakan Kertas specialises in the collection of all kinds of waste
-              materials, and doing it in smart and earth-friendly ways. We work
-              mostly with other corporations and business organisations, but our
-              services are open to anyone needing to recycle or dispose of
-              waste!
+              {language === "en" &&
+                "Rakan Kertas specialises in the collection of all kinds of waste materials, and doing it in smart and earth-friendly ways. We work mostly with other corporations and business organisations, but our services are open to anyone needing to recycle or dispose of waste!"}
+              {language === "ch" &&
+                "Rakan Kertas 专注于收集各种废物材料，并以智能和环保的方式进行处理。我们主要与其他公司和商业组织合作，但我们的服务对任何需要回收或处理废物的人开放！"}
+              {language === "my" &&
+                "Rakan Kertas mengkhusus dalam pengumpulan semua jenis bahan buangan, dan melakukannya dengan cara yang pintar dan mesra alam. Kami kebanyakannya bekerja dengan korporat lain dan organisasi perniagaan, tetapi perkhidmatan kami terbuka kepada sesiapa sahaja yang memerlukan untuk mengitar semula atau membuang sisa!"}
             </p>
             <br />
             <p>
-              We tailor our services to meet the unique needs of our clients,
-              offering both regular pickups and one-time bulk collections.
+              {language === "en" &&
+                "We tailor our services to meet the unique needs of our clients, offering both regular pickups and one-time bulk collections."}
+              {language === "ch" &&
+                "我们根据客户的独特需求定制服务，提供定期收集和一次性大宗收集。"}
+              {language === "my" &&
+                "Kami menyesuaikan perkhidmatan kami untuk memenuhi keperluan unik pelanggan kami, menawarkan pengambilan berkala dan pengumpulan besar sekali sahaja."}
             </p>
           </FadeInScroll>
         </div>
@@ -100,26 +169,35 @@ export default function AboutUs() {
           <FadeInScroll>
             <div className="h-max">
               <h2 className="text-4xl lg:text-5xl font-bold mb-5">
-                Our origins
+                {language === "en" && "Our origins"}
+                {language === "ch" && "我们的起源"}
+                {language === "my" && "Asal usul kami"}
               </h2>
               <p className="font-semibold">
-                Established in 2005, we&apos;ve evolved from a modest operation
-                into a key player in the waste management industry.
+                {language === "en" &&
+                  "Established in 2005, we&apos;ve evolved from a modest operation into a key player in the waste management industry."}
+                {language === "ch" &&
+                  "成立于2005年，我们从一个小规模的运营发展成为废物管理行业的关键参与者。"}
+                {language === "my" &&
+                  "Ditubuhkan pada tahun 2005, kami telah berkembang dari operasi kecil menjadi pemain utama dalam industri pengurusan sisa."}
               </p>
               <br />
               <p>
-                Guided by our unwavering commitment to environmental
-                stewardship, we are dedicated to minimising the ecological
-                impact of waste. With every collection, we move one step closer
-                to a cleaner, more sustainable future.
+                {language === "en" &&
+                  "Guided by our unwavering commitment to environmental stewardship, we are dedicated to minimising the ecological impact of waste. With every collection, we move one step closer to a cleaner, more sustainable future."}
+                {language === "ch" &&
+                  "在我们坚定不移的环境管理承诺的指导下，我们致力于最小化废物对生态的影响。每一次收集，我们都向更清洁、更可持续的未来迈进一步。"}
+                {language === "my" &&
+                  "Dipandu oleh komitmen kami yang tidak tergoyahkan terhadap pengurusan alam sekitar, kami berdedikasi untuk meminimumkan kesan ekologi sisa. Dengan setiap pengumpulan, kami bergerak selangkah lebih dekat ke masa depan yang lebih bersih dan lestari."}
               </p>
               <br />
               <p>
-                We pride ourselves in our innovative recycling solutions, which
-                we offer to other businesses to help make it easier for everyone
-                to recycle. It is our job to keep the environment clean and
-                recycle materials for reuse, to ensure the future
-                generation&apos;s access to a clean and green environment.
+                {language === "en" &&
+                  "We pride ourselves in our innovative recycling solutions, which we offer to other businesses to help make it easier for everyone to recycle. It is our job to keep the environment clean and recycle materials for reuse, to ensure the future generation's access to a clean and green environment."}
+                {language === "ch" &&
+                  "我们以创新的回收解决方案为荣，向其他企业提供这些解决方案，以帮助每个人更容易地进行回收。我们的工作是保持环境清洁并回收材料以供再利用，以确保未来一代人能够享有清洁和绿色的环境。"}
+                {language === "my" &&
+                  "Kami berbangga dengan penyelesaian kitar semula inovatif kami, yang kami tawarkan kepada perniagaan lain untuk membantu memudahkan semua orang mengitar semula. Tugas kami adalah menjaga kebersihan alam sekitar dan mengitar semula bahan untuk digunakan semula, untuk memastikan akses generasi masa depan kepada alam sekitar yang bersih dan hijau."}
               </p>
             </div>
           </FadeInScroll>
@@ -130,14 +208,16 @@ export default function AboutUs() {
           <AnimateScrollWrapper>
             <motion.div variants={baseVariants({ x: -20 }, { x: 0 })}>
               <h2 className="text-4xl lg:text-5xl font-bold mb-5">
-                What we value
+                {language === "en" && "What we value"}
+                {language === "ch" && "我们重视的价值观"}
+                {language === "my" && "Apa yang kami hargai"}
               </h2>
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 place-items-stretch w-full">
-              {values.map((value) => (
+              {values.map((value, index) => (
                 <motion.div
-                  key={value.title}
+                  key={index}
                   variants={baseVariants({ x: -20 }, { x: 0 })}
                 >
                   <Value {...value} />
@@ -150,19 +230,23 @@ export default function AboutUs() {
           <AnimateScrollWrapper>
             <motion.div variants={baseVariants({ x: 50 }, { x: 0 })}>
               <h2 className="text-4xl lg:text-5xl font-bold mb-5">
-                ...and our mission is to{" "}
-                <span className="text-accent">lead</span> in the field of
-                recycling by:
+                {language === "en" && "...and our mission is to"}
+                {language === "ch" && "...我们的使命是"}
+                {language === "my" && "...dan misi kami adalah untuk"}{" "}
+                <span className="text-accent">
+                  {language === "en" && "lead"}
+                  {language === "ch" && "引领"}
+                  {language === "my" && "memimpin"}
+                </span>{" "}
+                {language === "en" && "in the field of recycling by:"}
+                {language === "ch" && "在回收领域引领潮流："}
+                {language === "my" && "dalam bidang kitar semula dengan:"}
               </h2>
             </motion.div>
             <ul className="list-image-[url(/images/star-solid.svg)] list-inside text-lg">
-              {[
-                "Developing sustianable practices",
-                "Fostering a community environment",
-                "Creating a legacy of positive environmental impacts",
-              ].map((text: string) => (
+              {bulletPoints.map((text: string, index) => (
                 <motion.div
-                  key={text}
+                  key={index}
                   variants={baseVariants({ x: 50 }, { x: 0 })}
                 >
                   <li>
