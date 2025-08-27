@@ -190,12 +190,12 @@ export default function DisposableWasteCollection() {
       <div className="mesh-gradient text-center py-16 px-6 text-white flex flex-col items-center">
         <h2 className="font-bold text-4xl lg:text-5xl mb-5 text-center">
           {language === "en"
-            ? "Sounds like something you&apos;re interested in?"
+            ? "Sounds like something you're interested in?"
             : language === "ch"
             ? "听起来像是您感兴趣的事情？"
             : "Nampaknya ini sesuatu yang anda berminat?"}
         </h2>
-        <p className="w-full max-w-4xl">
+        <p className="w-full max-w-4xl mb-6">
           {language === "en"
             ? "This service is perfect for those who have large amounts of waste and are unsure of where to dispose of it, or just want overall convenient waste management handled for them!"
             : language === "ch"

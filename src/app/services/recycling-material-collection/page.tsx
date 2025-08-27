@@ -198,7 +198,7 @@ export default function RecyclingMaterialCollection() {
             ? "听起来像是您感兴趣的事情？"
             : "Nampaknya ini sesuatu yang anda berminat?"}
         </h2>
-        <p className="w-full max-w-4xl">
+        <p className="w-full max-w-4xl mb-6">
           {language === "en"
             ? "This service is perfect for those who have leftover recycling materials and have no use for them! We'd be more than happy to pay you for your recycling efforts."
             : language === "ch"
