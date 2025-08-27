@@ -260,16 +260,24 @@ export default function Home() {
             </div>
 
             {language === "en" && (
-              <LinkButton href="" variant="default" text="Get a quote" />
+              <LinkButton
+                href="/get-a-quote"
+                variant="default"
+                text="Get a quote"
+              />
             )}
 
             {language === "ch" && (
-              <LinkButton href="" variant="default" text="获取报价" />
+              <LinkButton
+                href="/get-a-quote"
+                variant="default"
+                text="获取报价"
+              />
             )}
 
             {language === "my" && (
               <LinkButton
-                href=""
+                href="/get-a-quote"
                 variant="default"
                 text="Dapatkan sebut harga"
               />
@@ -466,7 +474,7 @@ export default function Home() {
                 It's really just that simple! No work needed on your end, just
                 gotta throw your rubbish in the bin."
                   buttonText="More about waste collection"
-                  buttonLink=""
+                  buttonLink="/disposable-waste-collection"
                 />
               )}
               {language === "ch" && (
@@ -477,7 +485,7 @@ export default function Home() {
                   paragraphOne="我们会将工业废物箱送到您的区域。这可以是任何地方 - 建筑工地甚至只是公司办公室。任何需要大量垃圾处理的地方。"
                   paragraphTwo="然后，一旦废物箱满了，我们就会来收集它。真的就是这么简单！您只需将垃圾扔进箱子里，无需其他工作。"
                   buttonText="了解更多关于废物收集的信息"
-                  buttonLink=""
+                  buttonLink="'/disposable-waste-collection"
                 />
               )}
               {language === "my" && (
@@ -488,7 +496,7 @@ export default function Home() {
                   paragraphOne="Kami akan menghantar tong sisa industri ke kawasan anda. Ini boleh berlaku di mana-mana - tapak pembinaan atau pejabat syarikat. Mana-mana tempat yang memerlukan pembuangan sampah secara besar-besaran."
                   paragraphTwo="Kemudian, setelah tong sisa penuh, kami akan datang untuk mengumpulkannya. Ia sangat mudah! Tiada kerja diperlukan dari pihak anda, hanya perlu membuang sampah ke dalam tong."
                   buttonText="Ketahui lebih lanjut tentang pengumpulan sisa"
-                  buttonLink=""
+                  buttonLink="/disposable-waste-collection"
                 />
               )}
             </motion.div>
@@ -508,7 +516,7 @@ export default function Home() {
                   what you'd like to recycle, and we'll give you a
                   quote on what we can offer in return."
                   buttonText="More about recycling"
-                  buttonLink=""
+                  buttonLink="/recycling-material-collection"
                 />
               )}
               {language === "ch" && (
@@ -519,7 +527,7 @@ export default function Home() {
                   paragraphOne="此服务适用于那些手头有可回收材料、没有用处并希望出售以赚取一些额外现金的人。可以说是轻松赚钱。"
                   paragraphTwo="我们购买和收集纸张、纸箱、金属、木托盘等更多材料！只需给我们打个电话，告诉我们您想回收的材料，我们会给您一个报价。"
                   buttonText="了解更多关于回收的信息"
-                  buttonLink=""
+                  buttonLink="/recycling-material-collection"
                 />
               )}
               {language === "my" && (
@@ -530,7 +538,7 @@ export default function Home() {
                   paragraphOne="Perkhidmatan ini adalah untuk mereka yang mempunyai bahan kitar semula, tidak mempunyai kegunaan untuknya dan ingin menjualnya untuk mendapatkan wang tambahan. Boleh dikatakan sedikit wang mudah."
                   paragraphTwo="Kami membeli dan mengumpul kertas, kotak kadbod, logam, palet kayu dan banyak lagi! Hanya hubungi kami, beritahu kami apa yang anda ingin kitar semula, dan kami akan memberikan sebut harga tentang apa yang boleh kami tawarkan sebagai balasan."
                   buttonText="Ketahui lebih lanjut tentang kitar semula"
-                  buttonLink=""
+                  buttonLink="/recycling-material-collection"
                 />
               )}
             </motion.div>
@@ -596,7 +604,7 @@ export default function Home() {
           </h2>
 
           <LinkButton
-            href=""
+            href="/get-a-quote"
             variant="default"
             text={
               language === "en"
